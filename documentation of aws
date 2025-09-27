@@ -20,3 +20,30 @@ in jenkins and git
   webhooks
   install plugins
   tools and pipeline
+
+
+if the size is not enough then
+df -h
+sudo mount -o remount,size=2G /tmp
+df -h
+vim /etc/fstab
+tmpfs /tmp tmpfs defaults,noatime,mode=1777,size=2G 0 0
+systemctl daemon-reload
+reboot
+
+to fast jenkins server
+cd /var/lib/jenkins
+ll
+cat jenkins.model--copy
+vim --copy
+ll
+systemctl restart jenkins.service
+
+
+
+
+
+
+
+
+
