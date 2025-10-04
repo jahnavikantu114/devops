@@ -1,0 +1,21 @@
+create instance
+volume-5gb
+    1  lsblk
+    2  mkfs.ext4 /dev/nvme1n1
+    3  mkdir data
+    4  mount /dev/nvme1n1 data
+    5  cd data
+    6  touch s1 s2 s3
+    7  ll
+create snapshot from volume
+copy snap to ohio
+instance create in ohio
+create volume from snapshot
+attach volume to instance
+connect to terminal
+lsblk
+mkdir code
+mount /dev/nvme1n1 code
+cd code
+ll
+cd
