@@ -33,3 +33,36 @@ cd /tmp
 ll
 cat > data.txt
 scp data.txt root@10.0.0.18:/mnt
+
+
+
+
+
+
+n.virginia-> create vpc-> devops-vpc-> 10.0.0.0/16
+internet gateway-> devops-agw
+subnet ->public-subnet->1a->10.0.0.0/24
+private-subnet-> 1b->10.0.1.0/24
+launch ec2->1a->enable->http
+ec2->1b-disable->http, icmvp
+internet gateway->attach vpc
+route table->public-rt-devops-vpc
+edit route->igw->0.0.0.0/0
+edit subnet association->public-subnet
+#yum install httpd -y
+#rpmquery httpd
+cd /var/www/html
+echo "this is my web server" > index.html
+ll
+cd
+systemctl start enable httpd
+copy ip add paste in google
+ping private address of both
+copy key ->vim custom-key.pem
+chmod 400 , ll -d
+ssh -i custom-key.pem ec2-user@dbserverprivate
+ping google.com
+nat gateway-> devops-ngw-public subnet->elastic ip
+route table-private-subnet->devops-vpc
+edit route- nat gateway-subnet association
+ping google.com
