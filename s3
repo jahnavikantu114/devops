@@ -1,0 +1,36 @@
+    -> cat /etc/os-release
+    -> df -h
+      iam->s3-user->user group->permission policies->s3full
+      select use-> security credentials->create access key
+    ->  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" unzip awscliv2.zip
+       sudo ./aws/install
+    ->   whereis awcli
+    ->   aws configure
+    ->  ls -a
+   ->  cd .aws/
+   ->  ll
+   ->  cat config
+   ->  cat credentials
+   ->  sudo yum install automake fuse fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel
+   ->  git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+   ->  ll
+   ->  cd s3fs-fuse/
+   ->  ll
+   ->  ./autogen.sh
+   ->  ./configure --prefix=/usr --with-openssl
+   ->  make
+   ->  sudo make install
+   ->  cd
+   ->  which s3fs
+   ->  touch /etc/passwd-s3fs
+   ->  ll -d /etc/passwd-s3fs
+   ->  chmod 640 /etc/passwd-s3fs
+   ->  ll -d /etc/passwd-s3fs
+   ->  vim /etc/passwd-s3fs
+   ->  s3fs ohio-4455 /mnt -o passwd_file=/etc/passwd-s3fs
+   ->  df -h
+   ->  cd /mnt/
+   ->  ll
+   ->  touch pooja.txt{1..10}
+   ->  ll
+   ->  cd
