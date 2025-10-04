@@ -1,0 +1,35 @@
+n.virginia-> create vpc-> devops-vpc-> 10.0.0.0/16
+internet gateway-> devops-agw
+subnet ->public-subnet->1a->10.0.0.0/24
+private-subnet-> 1b->10.0.1.0/24
+launch ec2->1a->enable->http
+ec2->1b-disable->http, icmvp
+internet gateway->attach vpc
+route table->public-rt-devops-vpc
+edit route->igw->0.0.0.0/0
+edit subnet association->public-subnet
+duplicate-ohio vpc, instance
+n.V->vpc peering-devops-to-prod->devops-vpc
+ohio vpc id copy -create pearing
+ohio->peering->accept request
+n.V->route table-> public-rt-add 20.0.0.0/16
+ohio route table -> 10.0.0.0/16
+
+n.V -> ping 20.0.0.99
+vim /etc/ssh/sshd_config -permit, password
+systemctl start enable sshd
+cat > training.txt
+ll
+scp training.txt root@20.0.0.99:/tmp
+passwd root
+cd /mnt
+ll
+
+ohio-> ping 10.0.0.18
+vim /etc/ssh/sshd_config -permit, password
+systemctl start enable sshd
+passwd root
+cd /tmp
+ll
+cat > data.txt
+scp data.txt root@10.0.0.18:/mnt
